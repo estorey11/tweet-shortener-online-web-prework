@@ -17,12 +17,13 @@ def dictionary
 end
 
 def word_substituter(tweet)
+  short_tweet=[]
   tweet=tweet.split( )
   tweet.collect {|word|
     if dictionary.keys.include?(word.downcase)
       word = dictionary[word.downcase]
-      binding.pry
     end
+    short_tweet << word
   }
-  tweet.join(" ")
+  short_tweet.join(" ")
 end
